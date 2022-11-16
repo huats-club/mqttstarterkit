@@ -41,3 +41,28 @@ If pip3 is not already installed
 ```
 sudo apt install python3-pip
 ```
+
+## MQTT Flowchart (Example)
+### 3 Clients Example
+```mermaid
+graph LR;
+A[Client 1] -->|Publish Topic 1| B[MQTT Broker]
+B -->|Subscribe Topic 1| C[Client 2]
+B -->|Subscribe Topic 1| D[Client 3]
+C -->|Publish Topic 2| B
+B -->|Subscribe Topic 2| D
+```
+
+
+### 5 Clients Example
+```mermaid
+graph LR;
+A[Client 1] -->|Publish Topic 1| B[MQTT Broker]
+B -->|Subscribe Topic 1| C[Client 2]
+B -->|Subscribe Topic 1| D[Client 3]
+B -->|Subscribe Topic 1| E[Client 4]
+B -->|Subscribe Topic 1| F[Client 5]
+C -->|Publish Topic 2| B
+B -->|Subscribe Topic 2| A
+B -->|Subscribe Topic 2| F
+```
